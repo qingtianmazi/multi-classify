@@ -1,0 +1,25 @@
+sequence.txt是411段切割序列blacklist
+Encode125_xlsx1和Encode125_xlsx2是将完整的bed文件划分成两份
+data_cut1是用来进行真正实验数据的切割的
+
+features_1存放的是第一种细胞类型的特征
+data_after_150文件夹中存放的是窄峰，用于进行聚类
+
+----------------------------------------------------------分割线以上无用
+
+#用于做多分类的数据
+data_after_phase2存放的是去除无效字符N的1000bp的序列
+data_after_150_phase2存放的是中间150bp的窄峰
+data_after_label_phase2存放的是各类标签值
+
+#程序
+clstm_self.py 部分完成的网络框架
+create_PWM_test.py 用于提取PWM矩阵(卷积核)
+data_cut1.py 用于切分1000长样本 和 150长构建卷积核的样本
+feature_extraction_1hot.py one-hot特征
+feature_extraction_w2c.py word2vec编码
+invalid_seq_del.py 去除训练集中无效样本(包含N的)
+split_sample1.py 对PWM(卷积核)做切割工作，形成多个卷积核
+train_1.py 用于训练并评价 可做修改
+train_valid_test_split.py 划分训练集、验证集、测试集
+
